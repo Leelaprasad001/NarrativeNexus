@@ -1,7 +1,6 @@
 body {
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   background-color: #fff;
-  height: 200vh;
   position: relative;
 }
 
@@ -72,6 +71,7 @@ a:hover {
   z-index: 1999;
   position: relative;
   width: 100%;
+  box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.2);
   padding: 1rem;
 }
 
@@ -90,7 +90,6 @@ a:hover {
 .site-navbar .site-logo {
   position: absolute;
   font-size: 2rem;
-  text-transform: uppercase;
   font-weight: 900;
   line-height: 0;
   margin: 0;
@@ -136,7 +135,7 @@ a:hover {
 }
 
 .site-navbar .site-navigation .site-menu>li>a:hover {
-  color: #007bff;
+  color: #007bff !important;
 }
 
 .site-navbar .site-navigation .site-menu .has-children {
@@ -243,12 +242,6 @@ a:hover {
   top: 0;
 }
 
-.site-navbar .site-navigation .site-menu .has-children .dropdown>li.has-children:hover>a,
-.site-navbar .site-navigation .site-menu .has-children .dropdown>li.has-children:active>a,
-.site-navbar .site-navigation .site-menu .has-children .dropdown>li.has-children:focus>a {
-  background: #f8f9fa;
-  color: #ced4da;
-}
 
 .site-navbar .site-navigation .site-menu .has-children:hover>a,
 .site-navbar .site-navigation .site-menu .has-children:focus>a,
@@ -256,22 +249,13 @@ a:hover {
   color: #007bff;
 }
 
-.site-navbar .site-navigation .site-menu .has-children:hover,
+.site-navbar .site-navigation .site-menu .has-children:hover
 .site-navbar .site-navigation .site-menu .has-children:focus,
 .site-navbar .site-navigation .site-menu .has-children:active {
   cursor: pointer;
+  color: #007bff;
 }
 
-.site-navbar .site-navigation .site-menu .has-children:hover>.dropdown,
-.site-navbar .site-navigation .site-menu .has-children:focus>.dropdown,
-.site-navbar .site-navigation .site-menu .has-children:active>.dropdown {
-  -webkit-transition-delay: 0s;
-  -o-transition-delay: 0s;
-  transition-delay: 0s;
-  margin-top: 0px;
-  visibility: visible;
-  opacity: 1;
-}
 
 .site-mobile-menu {
   width: 300px;
