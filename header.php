@@ -1,3 +1,5 @@
+<?php include('server.php');
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,6 +25,7 @@
 
 
       <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
+
         <div class="container">
           <div class="row align-items-center position-relative">
 
@@ -36,48 +39,31 @@
 
                 <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
                   <li><a href="index.php" class="nav-link">Home</a></li>
-                  <li><a href="#services-section" class="nav-link">Blogs</a></li>
-                  <li><a href="#why-us-section" class="nav-link">Dashboard</a></li>
-                  <li><a href="#contact-section" class="nav-link">Contact</a></li>
-                  <li><a href="login.php" class="nav-link active">Login</a></li>
+                  <li><a href="blogs.php" class="nav-link">Blogs</a></li>
+                  <li><a href="dashboard.php" class="nav-link">Dashboard</a></li>
+                  <li><a href="contact.php" class="nav-link">Contact</a></li>
+                  <?php
+                   
+                    if (isset($_SESSION['username'])) {
+                        echo '<li><a href="logout.php">Logout</a></li>';
+                    }
+                    else {
+                        echo '<li><a href="login.php">Login</a></li>';
+                    }
+                   
+                  ?>
                 </ul>
               </nav>
 
             </div>
             <div class="toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
-
           </div>
         </div>
+
       </header>
 
 
-    <div class="container">
-        <div class="row justify-content-center mt-5">
-            <div class="col-md-6 mt-5 p-5">
-                <div class="card p-5">
-                    <div class="text-center">
-                        <h3 class="text-uppercase font-weight-bold">Login Form</h3>
-                    </div>
-                    <div class="card-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="username">Username</label>
-                                <input type="text" class="form-control" id="username" placeholder="Enter your username">
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Enter your password">
-                            </div>
-                            Don't have an account? <a href="register.php">Register here</a><br><br>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary  pl-5 pr-5">Login</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+      
 
     <script src="assets/js/jquery-3.3.1.min.js"></script>
     <script src="assets/js/popper.min.js"></script>

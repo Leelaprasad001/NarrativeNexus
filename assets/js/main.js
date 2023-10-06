@@ -1,4 +1,4 @@
-$(function() {
+$(document).ready(function(){
 
   var siteSticky = function() {
 		$(".js-sticky-header").sticky({topSpacing:0});
@@ -85,3 +85,42 @@ $(function() {
 	siteMenuClone();
 
 });
+
+
+function validateForm() {
+	var username = document.getElementById("username").value;
+	var password = document.getElementById("password").value;
+	var confirmPassword = document.getElementById("confirmpassword").value;
+	var div = document.getElementById("error");
+	
+	if (username.length < 5) {
+		div.innerHTML = `<p class="text-danger font-weight-bold">Username must contain atleast 5 characters</p>`;
+		return false;
+	}
+	else if (password !== confirmPassword) {
+		div.innerHTML = `<p class="text-danger font-weight-bold">Passwords do not match</p>`;
+		return false;
+	}
+	else{
+		div.innerHTML = "";
+	}
+
+
+	return true;
+}
+
+function validateLoginForm() {
+	var username = document.getElementById("username").value;
+	var div = document.getElementById("error");
+	
+	if (username.length < 5) {
+		div.innerHTML = `<p class="text-danger font-weight-bold">Username must contain atleast 5 characters</p>`;
+		return false;
+	}
+	else{
+		div.innerHTML = "";
+	}
+
+
+	return true;
+}
