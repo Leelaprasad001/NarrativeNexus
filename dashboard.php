@@ -23,15 +23,98 @@
         } 
         else
         {
-            echo '<div class="container vh-100">
-            <div class="row d-flex align-items-center justify-content-center pt-5">
-              <div class="col-md-6 mt-5 p-5">
-              hello 
-              </div>
-            </div>
-          </div>';
-        }
+            $username = $_SESSION['username'];
+            echo '<div class="container-fluid dash">
+                    <div class="row pt-5">
+                      <div class="col-md-6 text-left">
+                          <h4>Welcome to your dashboard, <span class="text-uppercase">' . $username . '👋</span></h4>
+                      </div>
+                      <div class="col-md-6 text-right">
+                        <a href="#addblog">
+                          <button class="btn btn-primary">+ Add Blog</button>
+                        </a>
+                      </div>
+                    </div>
 
+        
+                    <div class="row gy-4 counts">
+                      <div class="col-md-6">
+                        <div class="count-box">
+                          <i class="bi bi-emoji-smile"></i>
+                          <div>
+                            <span> '. $count .' </span>
+                            <p>Total No Blogs Created </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="count-box">
+                          <i class="bi bi-journal-richtext" style="color: #ee6c20;"></i>
+                          <div>
+                            <span> '. $verified .' </span>
+                            <p>Total No Blogs Verified </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>';
+
+
+                    echo'<div class="row">
+                          <div class="col-md-12 pb-3">
+                            <h4 class="text-center">Explore Your Blogs 🚀</span></h4>
+                          </div>';
+                    foreach ($curblogs as $blog) {
+                    echo '<div class="col-md-6">
+                            <div class="blg card">
+                              <img src="assets/uploads/' . $blog['image'] . '" class="card-img-top" alt="Blog Image">
+                              <div class="card-body">
+                                  <h5 class="card-title">' . $blog['heading'] . '</h5>
+                                  <h6 class="card-subtitle mb-2 text-muted">' . $blog['subtitle'] . '</h6>
+                                  <p class="card-text">' . $blog['date'] . ' - ' . ($blog['verified'] == 1 ? 'Verified' : 'Not Verified') . '</p>
+                                  <a><button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#blogContent' . $blog['sno'] . '">View More</button></a>
+                                  <div class="collapse pt-5" id="blogContent' . $blog['sno'] . '">
+                                      <p class="text-justify card-text">' . $blog['content'] . '</p>
+                                  </div>
+                              </div>
+                              </div>
+                          </div>';
+                    }
+
+                    echo'</div>';
+                    
+                    echo'<div class="row mt-5 mb-5" id="addblog">
+                      <div class="col-md-12 addblog">
+                        <h4 class="text-center">Lets Create an Awesome Blog</span></h4>
+                        <form method="post" class="form" enctype="multipart/form-data">
+                          <div class="form-group">
+                              <label for="heading">Heading</label>
+                              <input type="text" class="form-control" id="heading" name="heading" placeholder="Enter heading of the Blog......">
+                          </div>
+
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="subtitle">Subtitle</label>
+                                <input type="text" class="form-control" id="subtitle" name="subtitle" placeholder="Enter subtitle">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="image">Image</label>
+                                <input type="file" class="form-control-file" id="image" name="image">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="content">Content</label>
+                              <textarea class="form-control" id="content" name="content" rows="4" placeholder="Enter content of the Blog......"></textarea>
+                          </div>
+                          <div style="height:4rem !important" id="success"></div>
+                          <div class="text-center">
+                            <button type="submit" class="btn btn-primary  pl-5 pr-5"  name="submit">Submit</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                </div>';
+        }
         ?>
   <?php include('footer.php'); ?>
   </body>

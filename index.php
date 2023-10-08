@@ -2,6 +2,7 @@
 ?>
 <!doctype html>
 <html lang="en">
+  
   <body>
       <section class="main">
           <div class="container">

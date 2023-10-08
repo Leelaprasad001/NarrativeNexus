@@ -2,24 +2,34 @@
 ?>
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="assets/fonts/icomoon/style.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>NarrativeNexus</title>
-  </head>
   <body>
+  <?php
+      echo'<div class="container blogpg mb-5 pb-5">
+            <div class="row ">
+              <div class="col-md-12 pb-3 mt-5">
+                <h4 class="text-center">Explore All Blogs 🚀</span></h4>
+              </div>';
+      foreach ($blogs as $blog) {
+      echo '<div class="col-md-6">
+              <div class="blg card">
+                <img src="assets/uploads/' . $blog['image'] . '" class="card-img-top" alt="Blog Image" style="height: 17rem !important;">
+                <div class="card-body">
+                    <h5 class="card-title">' . $blog['heading'] . '</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">' . $blog['subtitle'] . '</h6>
+                    <p class="card-text">' . $blog['date'] . ' - ' . ($blog['verified'] == 1 ? 'Verified' : 'Not Verified') . '</p>
+                    <a><button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#blogContent' . $blog['sno'] . '">View More</button></a>
+                    <div class="collapse pt-5" id="blogContent' . $blog['sno'] . '">
+                        <p class="text-justify card-text">' . $blog['content'] . '</p>
+                    </div>
+                </div>
+                </div>
+            </div>';
+      }
 
+      echo'</div></div>';
+  ?>
     
 
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.sticky.js"></script>
-    <script src="assets/js/main.js"></script>
+  <?php include('footer.php'); ?>
   </body>
 </html>

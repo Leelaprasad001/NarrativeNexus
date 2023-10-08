@@ -584,3 +584,73 @@ section
   margin-left: 0.2rem;
   color: #000 !important;
 }
+.dash{
+  padding:1rem 8rem;
+}
+.dash h4{
+  font-size: 24px;
+  color: #012970;
+  font-weight: 700;
+}
+.counts {
+  padding: 70px 0px ;
+}
+.counts .count-box {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+}
+
+.counts .count-box i {
+  font-size: 42px;
+  line-height: 0;
+  margin-right: 20px;
+  color: #4154f1;
+}
+
+.counts .count-box span {
+  font-size: 36px;
+  display: block;
+  font-weight: 600;
+  color: #0b198f;
+}
+
+.counts .count-box p {
+  padding: 0;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+}
+.addblog{
+  width: 80%;
+  padding: 2rem;
+  background: #fff;
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+}
+.blg{
+  padding:1rem;
+  margin-bottom: 1.5rem;
+  background: #fff;
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+  border: none;
+}
+.blg img{
+  max-height: 17rem;
+}
+.blogpg h4{
+  font-size: 24px;
+  color: #012970;
+  font-weight: 700;
+}
+
+.card img {
+  transition: 0.5s;
+  transform: scale(1);
+}
+
+.card img:hover {
+  transform: scale(0.95);
+}
