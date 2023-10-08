@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/fonts/icomoon/style.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -41,9 +42,7 @@
                   <li><a href="index.php" class="nav-link">Home</a></li>
                   <li><a href="blogs.php" class="nav-link">Blogs</a></li>
                   <li><a href="dashboard.php" class="nav-link">Dashboard</a></li>
-                  <li><a href="contact.php" class="nav-link">Contact</a></li>
                   <?php
-                   
                     if (isset($_SESSION['username'])) {
                         echo '<li><a href="logout.php">Logout</a></li>';
                     }
@@ -70,5 +69,9 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.sticky.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
   </body>
 </html>
