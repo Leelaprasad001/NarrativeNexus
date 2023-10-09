@@ -115,7 +115,7 @@ if ((isset($_SESSION['username']))){
         $count = $row['blogCount']; // Access the 'blogCount' alias
     } 
 
-    $query1 = "SELECT COUNT(*) AS verifiedCount FROM blogs WHERE verified = 1";
+    $query1 = "SELECT COUNT(*) AS verifiedCount FROM blogs WHERE verified = 1 AND author = '$username'";
     $result1 = mysqli_query($db, $query1);
     if ($result1) {
         $row1 = mysqli_fetch_assoc($result1);
@@ -123,13 +123,41 @@ if ((isset($_SESSION['username']))){
     } 
 }
 
+//delete the blog
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete"])) {
+    $sno = mysqli_real_escape_string($db, $_POST['sno']);
+    $sql = "DELETE FROM blogs WHERE sno = $sno";
+    if (mysqli_query($db, $sql)) {
+        header('Location: dashboard.php');
+    }
+}
+
+//update the blog
+if (isset($_POST['update'])) {
+    $sno = mysqli_real_escape_string($db, $_POST['sno']);
+    $heading = mysqli_real_escape_string($db, $_POST['heading']);
+    $subtitle = mysqli_real_escape_string($db, $_POST['subtitle']);
+    $content = mysqli_real_escape_string($db, $_POST['content']);
+
+    $target_dir = "assets/uploads/";
+    $image = $_FILES['image']['name'];
+    $target_file = $target_dir . basename($image);
+
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
+        $sql = "UPDATE blogs SET heading = ?, subtitle = ?, content = ?, image = ? WHERE sno = ?";
+        $stmt = mysqli_prepare($db, $sql);
+        mysqli_stmt_bind_param($stmt, "ssssi", $heading, $subtitle, $content, $image, $sno);
+        if (mysqli_stmt_execute($stmt)) {
+            header('Location: dashboard.php');
+            exit();
+        } else {
+            echo "Error: " . mysqli_error($db);
+        }
+        mysqli_stmt_close($stmt);
+    }     
+}
 
 
-// if (isset($_POST['blogid'])) {
-//     $blogId = $_POST['blogid'];
-//     echo "<script type='text/javascript'>alert('". $blogId ."');</script>";
-    
-// }
 
     mysqli_close($db);
 

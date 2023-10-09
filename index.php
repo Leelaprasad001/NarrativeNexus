@@ -21,7 +21,7 @@
           </div>
       </section>
 
-      <section class="about">
+       <section class="about">
           <div class="container">
               <div class="row d-flex align-items-center justify-content-center pt-5" data-aos="fade-up" data-aos-duration="1000">
                 <div class="col-md-6 pt-5 img">
@@ -30,7 +30,7 @@
                 <div class="col-md-6">
                     <div class="content">
                       <h4>What We Provide</h4>                    
-                      <p class="font-weight-normal pt-2">
+                      <p class="font-weight-normal text-justify pt-2">
                         Narrative Nexus is a dynamic and engaging online platform designed for both avid readers and passionate writers. Our website offers a multifaceted experience that revolves around the captivating world of storytelling. Whether you're a seasoned wordsmith or simply someone who enjoys reading, Narrative Nexus provides a space where your literary journey can truly flourish.
                       </p>
                       <a href="dashboard.php">
@@ -42,7 +42,7 @@
           </div>
       </section>
       
-      <section class="values">
+     <section class="values">
         <div class="container" data-aos="fade-up">
           <div class="row text-center">
             <div class="col-md-12">
@@ -80,7 +80,6 @@
           </div>
         </div>
     </section>
-
     <?php include('footer.php'); ?>
   </body>
 </html>

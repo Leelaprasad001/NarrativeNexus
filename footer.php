@@ -1,16 +1,5 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link href="assets/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/fonts/icomoon/style.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>NarrativeNexus</title>
-  </head>
   <body>
     
     
@@ -19,8 +8,8 @@
     <div class="footer-top">
       <div class="container">
         <div class="row gy-4">
-          <div class="col-md-6 footer-info">
-            <h4>NarrativeNexus</h4>
+          <div class="col-md-6 footer-info mb-3">
+            <h4>Narrative Nexus</h4>
             <p class="font-weight-normal pt-2">
               Narrative Nexus is a dynamic and engaging online platform designed for both avid readers and passionate writers. Our website offers a multifaceted experience that revolves around the captivating world of storytelling.
             </p>
@@ -32,17 +21,17 @@
             </div>
           </div>
 
-          <div class="col-md-3 footer-links">
+          <div class="col-md-3 footer-links mb-3">
             <h4>Useful Links</h4>
             <ul class="list-unstyled pt-2">
               <li><i class="bi bi-chevron-right"></i> <a href="index.php">Home</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="blogs.php">Blogss</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="dashboard.php">Dashboard</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="login.php">login</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="login.php">Login</a></li>
             </ul>
           </div>
 
-          <div class="col-md-3 footer-contact text-center text-md-start">
+          <div class="col-md-3 footer-contact text-md-start mb-3">
             <h4>Contact Us</h4>
             <p>
               A108 Adam Street <br>
@@ -63,7 +52,7 @@
         &copy; Copyright <strong><span>Narrative Nexus</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
-        Designed By Leela Prasad Bantu</a>
+        Designed By <strong><a href="https://github.com/Leelaprasad001" class="text-bold text-reset" target="_blank">Leela Prasad Bantu</a></strong>
       </div>
     </div>
   </footer><!-- End Footer -->

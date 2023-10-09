@@ -17,9 +17,9 @@
   
     <div class="container">
         <div class="row justify-content-center mt-5">
-            <div class="col-md-6 mt-5 p-5">
-                <div class="card p-5">
-                    <div class="text-center">
+            <div class="col-md-6 mt-5 mb-5">
+                <div class="card reg">
+                    <div class="text-center mt-3">
                         <h3 class="text-uppercase font-weight-bold">Register Form</h3>
                     </div>
                     <div class="card-body">

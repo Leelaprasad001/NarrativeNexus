@@ -12,7 +12,7 @@
       foreach ($blogs as $blog) {
       echo '<div class="col-md-6">
               <div class="blg card">
-                <img src="assets/uploads/' . $blog['image'] . '" class="card-img-top" alt="Blog Image" style="height: 17rem !important;">
+                <img src="assets/uploads/' . $blog['image'] . '" class="card-img-top" alt="Blog Image" style="height: 17rem">
                 <div class="card-body">
                     <h5 class="card-title">' . $blog['heading'] . '</h5>
                     <h6 class="card-subtitle mb-2 text-muted">' . $blog['subtitle'] . '</h6>
