@@ -76,8 +76,8 @@ if(isset($_POST['submit'])) {
     move_uploaded_file($_FILES["image"]["tmp_name"], $target);
 
     $verified = 0;
-    $sql = "INSERT INTO blogs (author, heading, subtitle, image, content, verified)
-            VALUES ('$username', '$heading', '$subtitle', '$image', '$content', '$verified')";
+    $sql = "INSERT INTO blogs (author, heading, subtitle, image, content, Date, verified)
+            VALUES ('$username', '$heading', '$subtitle', '$image', '$content', Now(), '$verified')";
 
     if (mysqli_query($db, $sql)) {
         header('Location: dashboard.php');
@@ -157,7 +157,33 @@ if (isset($_POST['update'])) {
     }     
 }
 
+//get the total count of blogs and total verified
+if (isset($_SESSION['username']) && $_SESSION['username'] === "admin")
+{
+    $query = "SELECT COUNT(*) AS blogCount FROM blogs";
+    $result = mysqli_query($db, $query);
+    if ($result) {
+        $row = mysqli_fetch_assoc($result);
+        $totcount = $row['blogCount']; // Access the 'blogCount' alias
+    } 
 
+    $query1 = "SELECT COUNT(*) AS verifiedCount FROM blogs WHERE verified = 1";
+    $result1 = mysqli_query($db, $query1);
+    if ($result1) {
+        $row1 = mysqli_fetch_assoc($result1);
+        $totverified = $row1['verifiedCount']; // Access the 'blogCount' alias
+    } 
+}
+
+//verify the blog
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["verify"])  && isset($_SESSION['username']) && $_SESSION['username'] === "admin") 
+{
+    $sno = mysqli_real_escape_string($db, $_POST['sno']);
+    $sql = "UPDATE blogs SET verified = 1 WHERE sno = $sno";
+    if (mysqli_query($db, $sql)) {
+        header('Location: dashboard.php');
+    }
+}
 
     mysqli_close($db);
 

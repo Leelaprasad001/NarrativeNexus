@@ -664,6 +664,8 @@ section
   }
   .main{
     height: 100vh !important;
+    padding-top: 12rem;
+    text-align: center;
   }
   .about img{
     display: none;

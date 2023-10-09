@@ -17,7 +17,7 @@
   
     <div class="container">
         <div class="row justify-content-center mt-5">
-            <div class="col-md-6 mt-5 mb-5">
+            <div class="col-md-6 mt-5 mb-5" data-aos="zoom-in" data-aos-delay="200">
                 <div class="card reg">
                     <div class="text-center mt-3">
                         <h3 class="text-uppercase font-weight-bold">Register Form</h3>
