@@ -8,7 +8,7 @@ In today's world of digital storytelling, Narrative Nexus offers a dynamic and e
 
 ## Features
 
-**Narrative Nexus** offers the following key features:
+**Narrative Nexus** offers the following key features (CRUD):
 
 - **User Authentication:** Register and log in to access all the features and become part of the Narrative Nexus community. 🔐
 
@@ -20,7 +20,7 @@ In today's world of digital storytelling, Narrative Nexus offers a dynamic and e
 
 ## Getting Started
 
-To get started with Narrative Nexus, visit our website [here](insert-your-website-url-here) and create your account. Join our vibrant community of writers and readers, and let your storytelling journey begin. 🚀📖
+To get started with Narrative Nexus and create your account. Join our vibrant community of writers and readers, and let your storytelling journey begin. 🚀📖
 
 
 **Join us at Narrative Nexus and experience the magic of storytelling! 📖🌟🖋️**
