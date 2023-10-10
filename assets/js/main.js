@@ -88,12 +88,19 @@ $(document).ready(function(){
 
 
 function validateForm() {
+	var email = document.getElementById("email").value;
 	var username = document.getElementById("username").value;
 	var password = document.getElementById("password").value;
 	var confirmPassword = document.getElementById("confirmpassword").value;
 	var div = document.getElementById("error");
-	
-	if (username.length < 5) {
+	const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+    if (!emailRegex.test(email)) 
+	{
+		div.innerHTML = `<p class="text-danger font-weight-bold">Invalid Email Format</p>`;
+		return false;
+	}
+	else if (username.length < 5) {
 		div.innerHTML = `<p class="text-danger font-weight-bold">Username must contain atleast 5 characters</p>`;
 		return false;
 	}

@@ -2,16 +2,6 @@
 ?>
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="assets/fonts/icomoon/style.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>NarrativeNexus</title>
-  </head>
   <body>
 
   
@@ -25,14 +15,18 @@
                     <div class="card-body">
                         <form class="form" method="post" action="login.php">
                             <div class="form-group">
+                                <label for="username">Email</label>
+                                <input type="text" class="form-control" id="email" placeholder="Enter your Email" name="email" onblur="validateForm()" required>
+                            </div>
+                            <div class="form-group">
                                 <label for="username">Username</label>
                                 <input type="text" class="form-control" id="username" placeholder="Enter your username" name="username" onblur="validateForm()" required>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" style="display: inline-block; width: 48%;">
                                 <label for="password">Password</label>
                                 <input type="password" class="form-control" id="password" placeholder="Enter your password" name="password" onblur="validateForm()" required>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" style="display: inline-block; width: 48%;">
                                 <label for="confirmpassword">Confirm Password</label>
                                 <input type="password" class="form-control" id="confirmpassword" placeholder="Enter your password" name="confirmpassword" onblur="validateForm()" required>
                             </div>

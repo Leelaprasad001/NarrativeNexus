@@ -10,9 +10,9 @@ if (!$db) {
 
 //register user
 if(isset($_POST['register'])) {
+    $email = mysqli_real_escape_string($db, $_POST['email']);
     $username = mysqli_real_escape_string($db, $_POST['username']);
     $password = mysqli_real_escape_string($db, $_POST['password']);
-    $confirmpassword = mysqli_real_escape_string($db, $_POST['confirmpassword']);
 
    
     // $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
@@ -27,7 +27,7 @@ if(isset($_POST['register'])) {
         }
     }
     else{
-        $sql = "INSERT INTO register (username, password, confirmpassword) VALUES ('$username', '$password', '$confirmpassword')";
+        $sql = "INSERT INTO register (email, username, password) VALUES ('$email','$username', '$password')";
         if (mysqli_query($db, $sql)) {
             echo "<script type='text/javascript'>alert('Registration successful!');</script>";
         } else {
@@ -187,7 +187,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["verify"])  && isset($_
 
     mysqli_close($db);
 
+    $email = "";
     $username = "";
     $password = "";
-    $confirmpassword = "";
 ?>
