@@ -26,5 +26,3 @@ To get started with Narrative Nexus and create your account. Join our vibrant co
 
 
 **Join us at Narrative Nexus and experience the magic of storytelling! 📖🌟🖋️**
-
-- [Live Link](https://narrativenexus11.000webhostapp.com/)
